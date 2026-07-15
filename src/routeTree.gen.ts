@@ -18,6 +18,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as CennikRouteImport } from './routes/cennik'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UslugiIndexRouteImport } from './routes/uslugi.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as UslugiSlugRouteImport } from './routes/uslugi.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -67,6 +68,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UslugiIndexRoute = UslugiIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => UslugiRoute,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/uslugi/$slug': typeof UslugiSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/uslugi/': typeof UslugiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -105,10 +112,10 @@ export interface FileRoutesByTo {
   '/o-mnie': typeof OMnieRoute
   '/portfolio': typeof PortfolioRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/uslugi': typeof UslugiRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/uslugi/$slug': typeof UslugiSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/uslugi': typeof UslugiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -124,6 +131,7 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/uslugi/$slug': typeof UslugiSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/uslugi/': typeof UslugiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,6 +148,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/uslugi/$slug'
     | '/blog/'
+    | '/uslugi/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -149,10 +158,10 @@ export interface FileRouteTypes {
     | '/o-mnie'
     | '/portfolio'
     | '/sitemap.xml'
-    | '/uslugi'
     | '/blog/$slug'
     | '/uslugi/$slug'
     | '/blog'
+    | '/uslugi'
   id:
     | '__root__'
     | '/'
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/uslugi/$slug'
     | '/blog/'
+    | '/uslugi/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -246,6 +256,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/uslugi/': {
+      id: '/uslugi/'
+      path: '/'
+      fullPath: '/uslugi/'
+      preLoaderRoute: typeof UslugiIndexRouteImport
+      parentRoute: typeof UslugiRoute
+    }
     '/blog/': {
       id: '/blog/'
       path: '/'
@@ -284,10 +301,12 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface UslugiRouteChildren {
   UslugiSlugRoute: typeof UslugiSlugRoute
+  UslugiIndexRoute: typeof UslugiIndexRoute
 }
 
 const UslugiRouteChildren: UslugiRouteChildren = {
   UslugiSlugRoute: UslugiSlugRoute,
+  UslugiIndexRoute: UslugiIndexRoute,
 }
 
 const UslugiRouteWithChildren =
