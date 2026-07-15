@@ -21,6 +21,222 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "top-10-seo-trendow-2026",
+    tag: "SEO · Marketing",
+    title: "TOP 10 trendów SEO w 2026 roku — co warto wdrożyć",
+    description:
+      "Przegląd najważniejszych trendów SEO w 2026 roku. Jak przygotować stronę na nowe wymagania wyszukiwarek i zwiększyć widoczność w Google — praktycznie i bez zbędnego żargonu.",
+    date: "15 lut 2026",
+    datePublished: "2026-02-15",
+    read: "9 min",
+    keywords: [
+      "trendy SEO 2026",
+      "SEO dla firm",
+      "optymalizacja strony Google",
+      "Core Web Vitals 2026",
+      "pozycjonowanie strony",
+    ],
+    intro:
+      "W świecie marketingu cyfrowego coś ciągle się zmienia — i 2026 rok nie jest wyjątkiem. Algorytmy wyszukiwarek ewoluują, a specjaliści SEO muszą się dostosowywać. W tym artykule omawiam 10 głównych trendów SEO, które pomogą Ci zwiększyć widoczność strony w wynikach wyszukiwania.",
+    sections: [
+      {
+        h2: "1. Wyszukiwanie z pomocą sztucznej inteligencji",
+        paragraphs: [
+          "Sztuczna inteligencja stała się nieodłączną częścią wyszukiwarek. W 2026 roku obserwujemy głębszą integrację AI z algorytmami Google — w tym dalsze doskonalenie systemu MUM (Multitask Unified Model), który lepiej rozumie kontekst i intencje użytkownika.",
+        ],
+        list: [
+          "Twórz treści, które odpowiadają na konkretne pytania użytkowników",
+          "Używaj naturalnego języka — unikaj nadmiernej optymalizacji",
+          "Umieszczaj rozbudowane odpowiedzi na często zadawane pytania (FAQ)",
+        ],
+      },
+      {
+        h2: "2. Wideo w wynikach wyszukiwania",
+        paragraphs: [
+          "Wideo nadal dominuje w internecie, a wyszukiwarki przykładają do niego coraz większą wagę. W 2026 roku wyniki wideo zajmują więcej miejsca w SERP-ach — szczególnie dla zapytań poradnikowych i recenzji.",
+        ],
+        list: [
+          "Dodawaj szczegółowe opisy do filmów z użyciem słów kluczowych",
+          "Stosuj napisy i transkrypcje tekstowe",
+          "Optymalizuj miniatury",
+          "Dodawaj markup Schema.org dla wideo",
+        ],
+      },
+      {
+        h2: "3. Lokalny i głosowy search",
+        paragraphs: [
+          "Wraz z rosnącą popularnością asystentów głosowych wyszukiwanie lokalne zyskuje na znaczeniu. W 2026 roku ponad 50% zapytań jest wykonywanych głosowo — co wymaga zupełnie innego podejścia do optymalizacji.",
+        ],
+        list: [
+          "Używaj języka konwersacyjnego w treściach",
+          "Odpowiadaj na konkretne pytania (kto, co, gdzie, kiedy, jak)",
+          "Optymalizuj pod zapytania lokalne (np. 'gdzie jest najbliższy...')",
+          "Aktualizuj profil Google Moja Firma",
+        ],
+      },
+      {
+        h2: "4. Core Web Vitals i User Experience",
+        paragraphs: [
+          "Google nadal skupia się na jakości doświadczenia użytkownika. W 2026 roku Core Web Vitals pozostają kluczowym czynnikiem rankingowym. Szybkość ładowania, stabilność układu i responsywność na interakcje to filary dobrego UX.",
+        ],
+        list: [
+          "LCP (Largest Contentful Paint) — poniżej 2,5 sekundy",
+          "FID (First Input Delay) — poniżej 100 ms",
+          "CLS (Cumulative Layout Shift) — poniżej 0,1",
+        ],
+      },
+      {
+        h2: "5. E-E-A-T — Ekspertyza, Autorytet, Wiarygodność",
+        paragraphs: [
+          "Google przykłada coraz większą wagę do jakości treści i kompetencji autorów. W 2026 roku E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) jest szczególnie istotne dla serwisów z branży finansowej, zdrowotnej i prawnej (YMYL).",
+        ],
+        list: [
+          "Dodawaj informacje o autorach artykułów",
+          "Podawaj źródła i odnośniki do badań",
+          "Regularnie aktualizuj starsze treści",
+          "Zdobywaj linki z autorytatywnych serwisów",
+        ],
+      },
+      {
+        h2: "6. Zero-Click i Featured Snippets",
+        paragraphs: [
+          "Coraz więcej użytkowników otrzymuje odpowiedzi bezpośrednio w wynikach wyszukiwania — bez klikania w link. W 2026 roku warto optymalizować treści pod wyróżnione fragmenty (Featured Snippets), żeby budować widoczność marki nawet bez kliknięcia.",
+        ],
+        list: [
+          "Odpowiadaj na pytania w zwięzłej, przejrzystej formie",
+          "Stosuj strukturowaną treść (listy, tabele, kroki)",
+          "Używaj nagłówków sformułowanych jako pytania",
+          "Implementuj markup Schema.org (FAQ, HowTo)",
+        ],
+      },
+      {
+        h2: "7. Mobile-First Indexing i szybkość mobilna",
+        paragraphs: [
+          "Od 2023 roku Google w pełni przeszło na Mobile-First Indexing. W 2026 roku to już standard de facto — jeśli Twoja strona działa wolno lub nieczytelnie na telefonie, traci pozycje niezależnie od treści.",
+        ],
+        list: [
+          "Responsywny design (mobile / tablet / desktop)",
+          "Szybkie ładowanie strony — pod 3 sekundy na LTE",
+          "Wygodna nawigacja na małych ekranach",
+          "Duże obszary dotykowe, czytelna typografia",
+        ],
+      },
+      {
+        h2: "8. Treść odpowiadająca intencji użytkownika",
+        paragraphs: [
+          "Algorytmy wyszukiwarek coraz lepiej rozumieją intencję stojącą za zapytaniem. W 2026 roku kluczowe jest tworzenie treści, które dokładnie odpowiadają temu, czego użytkownik szuka — a nie tylko zawierają słowo kluczowe.",
+        ],
+        list: [
+          "Informacyjne (np. 'co to jest SEO')",
+          "Nawigacyjne (np. 'logowanie Google Analytics')",
+          "Transakcyjne (np. 'zamów stronę internetową')",
+          "Komercyjne (np. 'najlepsze agencje SEO w Polsce')",
+        ],
+      },
+    ],
+    conclusion:
+      "SEO w 2026 roku to połączenie technicznej optymalizacji, jakości treści i koncentracji na użytkowniku. Najskuteczniejsza strategia to tworzenie wartościowych, trafnych treści, które odpowiadają na pytania użytkowników i zapewniają doskonałe doświadczenie. Pamiętaj — SEO to maraton, nie sprint. Analizuj wyniki, adaptuj się do zmian algorytmów i zawsze stawiaj na pierwszym miejscu interesy swojej grupy docelowej.",
+    related: [
+      "bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis",
+      "prestashop-czy-woocommerce-co-wybrac-w-2026",
+      "laravel-vs-wordpress-co-wybrac-dla-firmy",
+    ],
+  },
+  {
+    slug: "jak-wybrac-programiste-freelancera",
+    tag: "Poradnik · Współpraca",
+    title: "Jak wybrać programistę freelancera – 7 pytań, które warto zadać",
+    description:
+      "Praktyczny poradnik dla firm, które szukają programisty freelancera. Czerwone flagi, dobre pytania i jak sprawdzić portfolio.",
+    date: "20 lis 2025",
+    datePublished: "2025-11-20",
+    read: "6 min",
+    keywords: [
+      "programista freelancer",
+      "jak zatrudnić programistę",
+      "szukam programisty",
+      "współpraca z freelancerem"
+    ],
+    intro:
+      "Znalezienie dobrego programisty freelancera to dziś jedno z trudniejszych zadań dla właściciela firmy. Portale jak Useme, Freelancehunt czy LinkedIn oferują setki profili – ale jak odróżnić solidnego specjalistę od kogoś, kto weźmie zaliczkę i zniknie lub dostarczy kod, którego nikt nie będzie w stanie utrzymać? Piszę ten artykuł z perspektywy freelancera, który pracuje z klientami od ponad 7 lat. Znam obie strony stołu.",
+    sections: [
+      {
+        h2: "1. Czy mogę zobaczyć działające projekty podobne do mojego?",
+        paragraphs: [
+          "Portfolio to nie tylko lista nazw i screenshoty. Poproś o linki do działających stron i sprawdź je osobiście – szybkość, responsywność, UX. Jeśli projekty są pod NDA, zapytaj o anonimowy opis: branża, zakres, użyte technologie. Dobry developer potrafi to opowiedzieć bez zdradzania danych klienta."
+        ]
+      },
+      {
+        h2: "2. Jak wygląda proces komunikacji i raportowania?",
+        paragraphs: [
+          "Zapytaj, jak często będziesz informowany o postępach, przez jaki kanał (Telegram, e-mail, Slack) i co się dzieje, jeśli pojawi się problem lub opóźnienie. Dobry freelancer proponuje konkretny rytm komunikacji – na przykład krótki update co 2–3 dni. Jeśli odpowiedź brzmi „piszesz kiedy chcesz, odpisuję kiedy mogę\" – to czerwona flaga."
+        ]
+      },
+      {
+        h2: "3. Co zawiera wycena i co jest poza nią?",
+        paragraphs: [
+          "Wiele nieprzyjemnych niespodzianek wynika z nieprecyzyjnej oferty. Zapytaj wprost: co dokładnie wchodzi w podaną cenę? Hosting? Moduły zewnętrzne? Testy? Szkolenie z obsługi? Ewentualne poprawki po odbiorze? Im precyzyjniejsza specyfikacja przed startem, tym mniej konfliktów w trakcie."
+        ]
+      },
+      {
+        h2: "4. Kto będzie właścicielem kodu po zakończeniu projektu?",
+        paragraphs: [
+          "To częsty problem przy współpracy z agencjami i freelancerami bez umowy. Upewnij się, że kod i wszystkie dostępy (hosting, domeny, CMS) są Twoje po zakończeniu współpracy. Dobry freelancer nie ma z tym problemu i sam zaproponuje odpowiedni zapis w umowie."
+        ]
+      },
+      {
+        h2: "5. Jak wygląda wsparcie techniczne po wdrożeniu?",
+        paragraphs: [
+          "Większość problemów ze stronami pojawia się nie w dniu wdrożenia, lecz 2–3 miesiące później – przy aktualizacji WordPressa, zmianie modułu płatności lub wzroście ruchu. Zapytaj, czy freelancer oferuje stałe wsparcie i na jakich warunkach (stawka godzinowa, abonament, liczba godzin miesięcznie)."
+        ]
+      },
+      {
+        h2: "6. Czy możesz skontaktować się z poprzednim klientem?",
+        paragraphs: [
+          "Opinie na portalach można sfabrykować. Referencja od prawdziwego klienta jest weryfikowalna – wystarczy jeden mail lub krótka rozmowa. Freelancer, który ma za sobą długą, udaną współpracę, chętnie poda kontakt. Jeśli wszystkie opinie są anonimowe albo prośba o kontakt do klienta spotka się z wymówkami – sprawdzaj dalej."
+        ]
+      },
+      {
+        h2: "7. Co się stanie, jeśli projekt się opóźni lub nie spełni oczekiwań?",
+        paragraphs: [
+          "Nie chodzi o pesymizm – chodzi o dojrzałość zawodową. Dobry freelancer ma gotową odpowiedź: jak obsługuje reklamacje, co jest w umowie na wypadek opóźnienia, czy zwraca zaliczkę przy niewykonaniu zakresu. Jeśli pytanie sprawia, że rozmówca staje się defensywny – to sygnał ostrzegawczy."
+        ]
+      },
+      {
+        h2: "Czerwone flagi – czego unikać",
+        paragraphs: [
+          "Poniższe sygnały nie oznaczają automatycznie złego programisty – ale każdy z nich powinien skłonić do zadania dodatkowych pytań."
+        ],
+        list: [
+          "Wycena bez pytań – dostałeś cenę w 5 minut po wysłaniu lakonicznego opisu? Dobry developer potrzebuje czasu na zrozumienie zakresu.",
+          "Brak umowy lub „możemy na słowo\" – zawsze powinna być umowa lub przynajmniej szczegółowa specyfikacja w e-mailu z potwierdzeniem obu stron.",
+          "Portfolio tylko ze screenshotów – bez działających linków i bez możliwości weryfikacji pracy.",
+          "Żądanie 100% płatności z góry – standardem jest 30–50% zaliczki, reszta po odbiorze lub w transzach.",
+          "Dostępy do hostingu i domeny tylko u niego – po zakończeniu projektu powinieneś mieć pełny dostęp do wszystkiego.",
+          "Brak odpowiedzi dłużej niż 48h na etapie ofertowania – jeśli teraz nie odpowiada szybko, co będzie w trakcie projektu?"
+        ]
+      },
+      {
+        h2: "Jak weryfikować freelancera – praktycznie",
+        paragraphs: [
+          "Zanim zlecisz duży projekt, zweryfikuj kandydata w prosty sposób:"
+        ],
+        list: [
+          "GitHub – sprawdź aktywność konta. Widoczne repozytoria, commits z ostatnich miesięcy, projekty open source to dobry znak.",
+          "LinkedIn – zweryfikuj historię zatrudnienia, rekomendacje od współpracowników i klientów.",
+          "Portale freelancerskie – Freelancehunt, Useme, Upwork mają systemy opinii powiązanych z konkretnymi zleceniami i użytkownikami.",
+          "Mały projekt testowy – zaproponuj małe, płatne zadanie. To najlepsza weryfikacja jakości kodu i komunikacji."
+        ]
+      }
+    ],
+    conclusion:
+      "Dobry programista freelancer to ktoś, kto pyta, zanim wycenia, komunikuje się regularnie, dotrzymuje terminów i nie boi się trudnych pytań. Portfolio i opinie to punkt wyjścia – rozmowa jest weryfikacją. Jeśli po tej rozmowie masz wątpliwości – słuchaj intuicji. Projekt IT, który zaczyna się od złych relacji, rzadko kończy się dobrze. Jak ja pracuję z nowymi klientami: zawsze zaczynam od rozmowy o projekcie, zadaję pytania, przygotowuję pisemną specyfikację i podpisuję prostą umowę z harmonogramem płatności. Kod jest komentowany, dostępy są Twoje. Po zakończeniu projektu jestem dostępny na bieżące wsparcie.",
+    related: [
+      "bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis",
+      "laravel-vs-wordpress-co-wybrac-dla-firmy",
+    ],
+  },
+  {
     slug: "dlaczego-polskie-firmy-zatrudniaja-ukrainskich-programistow",
     tag: "Współpraca · Freelance",
     title: "Dlaczego polskie firmy zatrudniają ukraińskich programistów?",
