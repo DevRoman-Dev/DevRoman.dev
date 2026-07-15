@@ -2,7 +2,7 @@ import { ContactForm } from "@/components/site/ContactForm";
 
 export function Contact() {
   return (
-    <section id="kontakt" className="px-6 py-24 md:py-32 border-t border-hairline">
+    <section id="kontakt" className="px-6 pt-24 md:pt-32 pb-0 border-t border-hairline">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           <div>
