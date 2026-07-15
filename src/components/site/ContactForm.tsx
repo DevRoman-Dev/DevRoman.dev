@@ -2,29 +2,58 @@ import { useState } from "react";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
-  const [err, setErr] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setErr(false);
+    setErr(null);
+    setSent(false);
+    
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "").trim();
     const email = String(data.get("email") || "").trim();
-    const type = String(data.get("type") || "").trim();
     const message = String(data.get("message") || "").trim();
 
-    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || message.length < 5) {
-      setErr(true);
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      setErr("Podano nieprawidłowy adres e-mail.");
+      return;
+    }
+    
+    if (message.length < 5) {
+      setErr("Wiadomość musi mieć minimum 5 znaków.");
       return;
     }
 
-    const body = `Imię: ${name}\nTyp: ${type}\n\n${message}`;
-    window.location.href = `mailto:contact@devroman.pl?subject=${encodeURIComponent(
-      "Zapytanie ze strony · " + (type || "projekt")
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-    form.reset();
+    data.append("source", "DevRoman.pl");
+    
+    setLoading(true);
+    try {
+      // Create URLSearchParams to send as application/x-www-form-urlencoded which is sometimes more reliable with PHP
+      const urlEncodedData = new URLSearchParams(data as any);
+      
+      const response = await fetch("https://bot.programist.top/api/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: urlEncodedData,
+      });
+      
+      if (response.ok) {
+        setSent(true);
+        form.reset();
+      } else {
+        const text = await response.text();
+        console.error("API Error Response:", text);
+        setErr(`Błąd serwera (kod: ${response.status}). Zobacz konsolę po więcej szczegółów.`);
+      }
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      setErr("Wystąpił błąd sieci. Prawdopodobnie problem z CORS. Zobacz konsolę w przeglądarce (F12).");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -51,11 +80,33 @@ export function ContactForm() {
             placeholder="jan@firma.pl"
           />
         </div>
+        {/*
+        <div className="space-y-2">
+          <label className="text-[10px] font-mono uppercase text-foreground/50 tracking-widest">Telefon</label>
+          <input
+            name="phone"
+            type="tel"
+            maxLength={20}
+            className="w-full bg-background/60 border border-hairline px-4 py-3 rounded-md outline-none focus:border-accent transition-colors text-sm"
+            placeholder="+48 123 456 789"
+          />
+        </div>
+        <div className="space-y-2">
+          <label className="text-[10px] font-mono uppercase text-foreground/50 tracking-widest">Budżet</label>
+          <input
+            name="budget"
+            type="text"
+            maxLength={50}
+            className="w-full bg-background/60 border border-hairline px-4 py-3 rounded-md outline-none focus:border-accent transition-colors text-sm"
+            placeholder="np. 5000 PLN"
+          />
+        </div>
+        */}
       </div>
       <div className="space-y-2">
-        <label className="text-[10px] font-mono uppercase text-foreground/50 tracking-widest">Rodzaj projektu</label>
+        <label className="text-[10px] font-mono uppercase text-foreground/50 tracking-widest">Rodzaj projektu (Usługa)</label>
         <select
-          name="type"
+          name="service"
           defaultValue=""
           className="w-full bg-background/60 border border-hairline px-4 py-3 rounded-md outline-none focus:border-accent transition-colors text-sm"
         >
@@ -81,17 +132,17 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="w-full bg-accent text-accent-foreground py-4 rounded-md font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all glow-accent"
+        disabled={loading}
+        className="w-full bg-accent text-accent-foreground py-4 rounded-md font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all glow-accent disabled:opacity-50"
       >
-        📩 Wyślij wiadomość
+        {loading ? "Wysyłanie..." : "📩 Wyślij wiadomość"}
       </button>
       {sent && !err && (
         <p className="text-sm text-accent">✅ Wiadomość wysłana! Odpiszę najdalej do jutra.</p>
       )}
       {err && (
         <p className="text-sm text-destructive">
-          ❌ Coś poszło nie tak. Sprawdź pola lub napisz bezpośrednio na{" "}
-          <a className="underline" href="mailto:contact@devroman.pl">contact@devroman.pl</a>
+          ❌ {err}
         </p>
       )}
     </form>
