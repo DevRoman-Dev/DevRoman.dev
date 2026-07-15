@@ -57,11 +57,11 @@ export const Route = createFileRoute("/uslugi/$slug")({
         { property: "og:description", content: service.metaDesc },
         { property: "og:url", content: url },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: "https://devroman.pl/og-image.jpg" },
+        { property: "og:image", content: "https://devroman.pl/og-image.png" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: service.metaTitle },
         { name: "twitter:description", content: service.metaDesc },
-        { name: "twitter:image", content: "https://devroman.pl/og-image.jpg" },
+        { name: "twitter:image", content: "https://devroman.pl/og-image.png" },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
