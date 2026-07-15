@@ -29,7 +29,7 @@ export function Portfolio({ limit }: { limit?: number } = {}) {
                 <div className="aspect-[16/10] rounded-2xl border border-hairline mb-6 overflow-hidden bg-surface relative">
                   <img
                     src={p.image}
-                    alt={p.title}
+                    alt={`Projekt w portfolio: ${p.title} (${p.tag})`}
                     width={1280}
                     height={800}
                     loading="lazy"
@@ -37,7 +37,7 @@ export function Portfolio({ limit }: { limit?: number } = {}) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/10 to-transparent pointer-events-none" />
                   <div className="absolute inset-0 flex items-end p-6 md:p-8">
-                    <div className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-foreground/10 group-hover:text-accent/30 transition-colors duration-500">
+                    <div className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-foreground/10 group-hover:text-accent/30 transition-colors duration-500" aria-hidden="true">
                       {p.title.split(' ')[0]}
                     </div>
                   </div>
