@@ -6,6 +6,7 @@ export interface BlogSection {
 
 export interface BlogPost {
   slug: string;
+  image?: string;
   tag: string;
   title: string;
   description: string;
@@ -22,6 +23,7 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "top-10-seo-trendow-2026",
+    image: "/images/blog/top-10-seo-trendow-2026.png",
     tag: "SEO · Marketing",
     title: "TOP 10 trendów SEO w 2026 roku — co warto wdrożyć",
     description:
@@ -144,6 +146,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "jak-wybrac-programiste-freelancera",
+    image: "/images/blog/jak-wybrac-programiste-freelancera.png",
     tag: "Poradnik · Współpraca",
     title: "Jak wybrać programistę freelancera – 7 pytań, które warto zadać",
     description:
@@ -238,6 +241,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "dlaczego-polskie-firmy-zatrudniaja-ukrainskich-programistow",
+    image: "/images/blog/dlaczego-polskie-firmy-zatrudniaja-ukrainskich-programistow.png",
     tag: "Współpraca · Freelance",
     title: "Dlaczego polskie firmy zatrudniają ukraińskich programistów?",
     description:
@@ -309,6 +313,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "prestashop-czy-woocommerce-co-wybrac-w-2026",
+    image: "/images/blog/prestashop-czy-woocommerce-co-wybrac-w-2026.png",
     tag: "E-commerce",
     title: "PrestaShop czy WooCommerce — co wybrać w 2026?",
     description:
@@ -377,6 +382,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "ile-kosztuje-sklep-prestashop-w-2026",
+    image: "/images/blog/ile-kosztuje-sklep-prestashop-w-2026.png",
     tag: "E-commerce · Ceny",
     title: "Ile kosztuje sklep PrestaShop w 2026?",
     description:
@@ -439,6 +445,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "migracja-sklepu-bez-przestojow-jak-to-zrobic",
+    image: "/images/blog/migracja-sklepu-bez-przestojow-jak-to-zrobic.png",
     tag: "Migracja",
     title: "Migracja sklepu bez przestojów — jak to zrobić?",
     description:
@@ -520,6 +527,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis",
+    image: "/images/blog/bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis.png",
     tag: "Bezpieczeństwo",
     title: "Bezpieczeństwo WordPress — 10 rzeczy, które zrobisz dziś",
     description:
@@ -607,6 +615,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "laravel-vs-wordpress-co-wybrac-dla-firmy",
+    image: "/images/blog/laravel-vs-wordpress-co-wybrac-dla-firmy.png",
     tag: "Backend",
     title: "Laravel vs WordPress — co wybrać dla firmy?",
     description:
@@ -676,6 +685,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "rest-api-co-to-jest-i-dlaczego-sklep-go-potrzebuje",
+    image: "/images/blog/rest-api-co-to-jest-i-dlaczego-sklep-go-potrzebuje.png",
     tag: "Integracje",
     title: "REST API — co to jest i dlaczego sklep go potrzebuje?",
     description:
@@ -746,6 +756,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "crm-na-zamowienie-vs-gotowe-rozwiazanie",
+    image: "/images/blog/crm-na-zamowienie-vs-gotowe-rozwiazanie.png",
     tag: "CRM · Biznes",
     title: "CRM na zamówienie vs gotowe rozwiązanie",
     description:

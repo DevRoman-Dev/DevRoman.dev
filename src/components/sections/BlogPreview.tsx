@@ -76,22 +76,36 @@ export function BlogPreview({ searchQuery = "", showSearch = false }: { searchQu
               <Link
                 to="/blog/$slug"
                 params={{ slug: featured.slug }}
-                className="group block mb-6 rounded-3xl border border-hairline bg-gradient-to-br from-surface to-background p-8 md:p-12 hover:border-accent/40 transition-colors"
+                className="group block mb-6 rounded-3xl border border-hairline bg-gradient-to-br from-surface to-background overflow-hidden hover:border-accent/40 transition-colors"
               >
-                <div className="flex flex-wrap gap-3 items-center mb-6">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent px-2 py-1 border border-accent/40 rounded">
-                    {searchQuery ? "Najlepszy wynik" : "Najnowszy artykuł"}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">{featured.tag}</span>
-                </div>
-                <h3 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight mb-6 max-w-3xl group-hover:text-accent transition-colors">
-                  {featured.title}
-                </h3>
-                <p className="text-foreground/60 mb-6 max-w-2xl">{featured.description}</p>
-                <div className="flex flex-wrap items-center gap-4 text-sm text-foreground/50">
-                  <span>📅 {featured.date}</span>
-                  <span>⏱ {featured.read}</span>
-                  <span className="ml-auto text-accent group-hover:translate-x-1 transition-transform">Czytaj →</span>
+                <div className="flex flex-col md:flex-row">
+                  <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
+                    <div className="flex flex-wrap gap-3 items-center mb-6">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent px-2 py-1 border border-accent/40 rounded">
+                        {searchQuery ? "Najlepszy wynik" : "Najnowszy artykuł"}
+                      </span>
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">{featured.tag}</span>
+                    </div>
+                    <h3 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight mb-6 group-hover:text-accent transition-colors">
+                      {featured.title}
+                    </h3>
+                    <p className="text-foreground/60 mb-6 max-w-2xl">{featured.description}</p>
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-foreground/50 mt-auto">
+                      <span>📅 {featured.date}</span>
+                      <span>⏱ {featured.read}</span>
+                      <span className="ml-auto text-accent group-hover:translate-x-1 transition-transform">Czytaj →</span>
+                    </div>
+                  </div>
+                  {featured.image && (
+                    <div className="md:w-1/2 h-64 md:h-auto overflow-hidden bg-surface/50 border-t md:border-t-0 md:border-l border-hairline relative">
+                      <img 
+                        src={featured.image || `https://picsum.photos/seed/${featured.slug}/800/600`}
+                        onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${featured.slug}/800/600`; }}
+                        alt={featured.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                      />
+                    </div>
+                  )}
                 </div>
               </Link>
             )}
@@ -103,14 +117,26 @@ export function BlogPreview({ searchQuery = "", showSearch = false }: { searchQu
                     key={b.slug}
                     to="/blog/$slug"
                     params={{ slug: b.slug }}
-                    className="group p-6 rounded-2xl border border-hairline bg-background hover:bg-surface hover:border-accent/40 transition-colors flex flex-col gap-4"
+                    className="group rounded-2xl border border-hairline bg-background hover:bg-surface hover:border-accent/40 transition-colors flex flex-col overflow-hidden"
                   >
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">{b.tag}</span>
-                    <h4 className="font-display text-lg font-bold tracking-tight group-hover:text-accent transition-colors">{b.title}</h4>
-                    <p className="text-sm text-foreground/60 line-clamp-2">{b.description}</p>
-                    <div className="mt-auto flex items-center gap-3 text-xs text-foreground/40">
-                      <span>📅 {b.date}</span>
-                      <span>⏱ {b.read}</span>
+                    {b.image && (
+                      <div className="w-full h-48 overflow-hidden bg-surface/50 border-b border-hairline relative">
+                        <img 
+                          src={b.image}
+                          onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${b.slug}/600/400`; }}
+                          alt={b.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 flex flex-col gap-4 flex-1">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">{b.tag}</span>
+                      <h4 className="font-display text-lg font-bold tracking-tight group-hover:text-accent transition-colors">{b.title}</h4>
+                      <p className="text-sm text-foreground/60 line-clamp-2">{b.description}</p>
+                      <div className="mt-auto flex items-center gap-3 text-xs text-foreground/40 pt-4">
+                        <span>📅 {b.date}</span>
+                        <span>⏱ {b.read}</span>
+                      </div>
                     </div>
                   </Link>
                 ))}

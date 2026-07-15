@@ -29,14 +29,14 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.description },
         { property: "og:url", content: url },
-        { property: "og:image", content: "https://devroman.pl/og-image.png" },
+        { property: "og:image", content: post.image ? `${BASE}${post.image}` : "https://devroman.pl/og-image.png" },
         { property: "article:published_time", content: post.datePublished },
         { property: "article:author", content: "Roman Matviy" },
         { property: "article:section", content: post.tag },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: post.title },
         { name: "twitter:description", content: post.description },
-        { name: "twitter:image", content: "https://devroman.pl/og-image.png" },
+        { name: "twitter:image", content: post.image ? `${BASE}${post.image}` : "https://devroman.pl/og-image.png" },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
@@ -141,6 +141,16 @@ function BlogPostPage() {
           <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
             {post.title}
           </h1>
+          
+          {/* Main Image */}
+          <div className="w-full h-64 md:h-96 overflow-hidden rounded-3xl border border-hairline mb-8 bg-surface">
+            <img 
+              src={post.image || `https://picsum.photos/seed/${post.slug}/1200/630`} 
+              onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${post.slug}/1200/630`; }}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-4 text-sm text-foreground/50 mb-12 pb-12 border-b border-hairline">
@@ -217,15 +227,27 @@ function BlogPostPage() {
                     key={r.slug}
                     to="/blog/$slug"
                     params={{ slug: r.slug }}
-                    className="group p-6 rounded-2xl border border-hairline bg-background hover:bg-surface hover:border-accent/40 transition-colors flex flex-col gap-3"
+                    className="group rounded-2xl border border-hairline bg-background hover:bg-surface hover:border-accent/40 transition-colors flex flex-col overflow-hidden"
                   >
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
-                      {r.tag}
-                    </span>
-                    <h4 className="font-display text-base font-bold tracking-tight group-hover:text-accent transition-colors">
-                      {r.title}
-                    </h4>
-                    <span className="mt-auto text-xs text-foreground/40">⏱ {r.read}</span>
+                    {r.image && (
+                      <div className="w-full h-32 overflow-hidden bg-surface/50 border-b border-hairline">
+                        <img 
+                          src={r.image}
+                          onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${r.slug}/600/400`; }}
+                          alt={r.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 flex flex-col gap-3 flex-1">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
+                        {r.tag}
+                      </span>
+                      <h4 className="font-display text-base font-bold tracking-tight group-hover:text-accent transition-colors">
+                        {r.title}
+                      </h4>
+                      <span className="mt-auto text-xs text-foreground/40 pt-2">⏱ {r.read}</span>
+                    </div>
                   </Link>
                 ))}
               </div>
