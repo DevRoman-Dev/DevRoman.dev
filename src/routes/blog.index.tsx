@@ -4,6 +4,11 @@ import { BlogPreview } from "@/components/sections/BlogPreview";
 import { Contact } from "@/components/sections/Contact";
 
 export const Route = createFileRoute("/blog/")({
+  validateSearch: (search: Record<string, unknown>): { q?: string } => {
+    return {
+      q: typeof search.q === "string" ? search.q : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "Blog — porady dla właścicieli firm · Roman Matviy" },
@@ -14,12 +19,17 @@ export const Route = createFileRoute("/blog/")({
     ],
     links: [{ rel: "canonical", href: "https://devroman.pl/blog" }],
   }),
-  component: () => (
+  component: BlogPage,
+});
+
+function BlogPage() {
+  const { q } = Route.useSearch();
+  return (
     <SiteLayout>
       <div className="pt-16">
-        <BlogPreview />
+        <BlogPreview searchQuery={q} showSearch={true} />
         <Contact />
       </div>
     </SiteLayout>
-  ),
-});
+  );
+}

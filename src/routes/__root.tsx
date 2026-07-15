@@ -116,7 +116,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "devroman — Roman Matviy" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pl_PL" },
+      { property: "og:image", content: "https://devroman.pl/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://devroman.pl/og-image.jpg" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
