@@ -1,0 +1,92 @@
+# llms.txt – devroman.pl
+# Standard: https://llmstxt.org
+# Last updated: 2026-03-22
+
+> Roman Matviy is a freelance full-stack developer based in Lviv, Ukraine,
+> specializing in Laravel, PHP, PrestaShop, WordPress and Vue.js.
+> He works with clients from Poland and Europe.
+> Contact: roman@matviy.pp.ua | Telegram: @RomanMatviy
+
+## About
+
+Roman Matviy is a commercial software developer with 7+ years of experience.
+He builds e-commerce stores, web applications, REST APIs and WordPress/PrestaShop
+sites for small and medium businesses, marketing agencies and e-commerce companies
+primarily in Poland, Germany, Netherlands, Czech Republic and other European markets.
+
+He is available for:
+- New project contracts (fixed price or hourly)
+- Long-term maintenance and development partnerships
+- Code review and technical consulting
+- Taking over existing projects from other developers
+
+Communication languages: Polish (basic), English (fluent), Ukrainian (native).
+
+## Services
+
+- **E-commerce development**: PrestaShop, WooCommerce, Thirty Bees — new stores,
+  theme/module customization, payment integrations (Przelewy24, PayU, Stripe),
+  courier integrations (InPost, DHL, DPD), ERP/CRM integrations, migrations
+- **Web applications**: Laravel-based CRM systems, project management tools,
+  lead management systems, REST API development, admin panels (Filament)
+- **WordPress development**: Company websites, landing pages, blogs, WooCommerce shops,
+  multi-site installations, ACF/Carbon Fields customization
+- **Integrations**: Payment gateways, shipping APIs, external data sources,
+  XML/CSV feed processors, webhooks
+- **Maintenance**: Performance optimization, security audits, updates,
+  bug fixes, code refactoring
+
+## Tech Stack
+
+Backend: Laravel, PHP 8+, REST API, MySQL/MariaDB, Docker, Composer, Livewire, Filament
+E-commerce: PrestaShop 8, WordPress, WooCommerce, Thirty Bees, OpenCart
+Frontend: Vue.js 3, JavaScript ES6+, TypeScript, jQuery, TailwindCSS, Bootstrap, SCSS/SASS
+Tools: Git, GitHub, GitLab, Linux, Vite, Webpack, Gulp, Postman, Swagger, Figma
+
+## Experience
+
+- Freelance Laravel/Full-Stack Developer (Freelancehunt platform, ongoing)
+- Full-Stack Engineer at NC-ONE (Laravel + Vue.js, Docker, TypeScript)
+- PHP Developer at WebSpirit (Laravel-like framework, full-stack)
+- PrestaShop/WordPress Developer at SoftSprint (themes, modules, Thirty Bees)
+- WordPress Developer at Sure Lock & Key LLC (multi-site, Carbon Fields)
+- Full-Stack Developer at APARTNER.PRO (WordPress, PrestaShop, Laravel)
+
+## Portfolio highlights
+
+- B2B agricultural marketplace (Laravel/Vite/MySQL)
+- Lead management CRM for automotive sector (Laravel/Vue.js)
+- Medical health service platform (Laravel/Livewire)
+- Project management system with Filament admin (Laravel/FilamentPHP)
+- Task Manager REST API with Swagger docs (Laravel/PHP)
+- Calendar event service (Laravel/Vite/jQuery)
+- Multiple PrestaShop stores with InPost, PayU, ERP integrations
+- WordPress sites for hostels, services, local businesses
+
+## Blog (Polish language, targeting Polish business owners)
+
+- /blog/prestashop-vs-woocommerce/ – PrestaShop vs WooCommerce comparison
+- /blog/ile-kosztuje-prestashop/ – Real cost breakdown of PrestaShop store
+- /blog/jak-wybrac-freelancera/ – How to choose a freelance developer
+- /blog/laravel-vs-wordpress/ – Laravel vs WordPress: when to use which
+- /blog/bezpieczenstwo-wordpress/ – WordPress security: 10 essential steps
+- /blog/migracja-sklepu/ – E-commerce store migration guide
+- /blog/rest-api/ – REST API explained for business owners
+- /blog/crm-na-zamowienie/ – Custom CRM vs off-the-shelf solutions
+- /blog/ukrainski-developer/ – Why Polish companies hire Ukrainian developers
+
+## Contact
+
+- Website: https://devroman.pl
+- Email: roman@matviy.pp.ua
+- Telegram: https://t.me/RomanMatviy
+- LinkedIn: https://linkedin.com/in/MatviyRoman
+- GitHub: https://github.com/MatviyRoman
+- Portfolio: https://matviy.pp.ua
+- Reviews: https://freelancehunt.com/freelancer/romas6ka.html#reviews
+
+## Availability
+
+Currently available for new projects and long-term partnerships.
+Response time: same day or next business day.
+Pricing: fixed price per project or hourly rate (contact for quote).

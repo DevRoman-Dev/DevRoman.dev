@@ -1,0 +1,25 @@
+/* TEAM */
+  Developer & Designer: Roman Matviy
+  Location: Lviv, Ukraine
+  Contact: roman@matviy.pp.ua
+  Telegram: @RomanMatviy
+  LinkedIn: linkedin.com/in/MatviyRoman
+  GitHub: github.com/MatviyRoman
+
+/* SITE */
+  Domain: devroman.pl
+  Last update: 2026-03-22
+  Language: Polish (pl)
+  Doctype: HTML5
+  IDE: VS Code
+
+/* TECH STACK */
+  HTML5, CSS3, JavaScript
+  Fonts: Syne, DM Sans (Google Fonts)
+  Forms: Web3Forms (web3forms.com)
+  Hosting: —
+
+/* THANKS */
+  Google Fonts – fonts.google.com
+  Web3Forms – web3forms.com
+  Schema.org – schema.org
