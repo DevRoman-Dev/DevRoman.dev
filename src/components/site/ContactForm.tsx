@@ -133,7 +133,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-accent text-accent-foreground py-4 rounded-md font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all glow-accent disabled:opacity-50"
+        className="w-full bg-accent text-accent-foreground py-4 rounded-md font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all glow-accent cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Wysyłanie..." : "📩 Wyślij wiadomość"}
       </button>
