@@ -12,7 +12,7 @@ const links = [
 export function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/60 border-b border-hairline">
-      <div className="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto h-16 px-[15px] md:px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-display font-extrabold tracking-tighter text-lg">
           <span className="size-2 rounded-full bg-accent animate-pulse-dot" />
           DevRoman<span className="text-accent">.pl</span>
