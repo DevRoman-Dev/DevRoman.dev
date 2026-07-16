@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { SERVICES_DETAIL } from "@/lib/services-detail";
+import { CookieBanner } from "@/components/site/CookieBanner";
 
 const SERVICE_ICONS: Record<string, string> = {
   "strony-internetowe": "🌐",
@@ -205,6 +206,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <CookieBanner />
     </QueryClientProvider>
   );
 }
