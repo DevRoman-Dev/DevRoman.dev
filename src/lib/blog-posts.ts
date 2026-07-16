@@ -92,13 +92,13 @@ export const BLOG_POSTS: BlogPost[] = [
       "Skuteczna migracja sklepu internetowego to skomplikowany proces, wymagający wiedzy programistycznej, świadomości SEO i starannego planowania. Pamiętaj: tania migracja, wykonana bez dbałości o pozycje w Google i integralność danych, może kosztować Cię spadek sprzedaży o 50% w pierwszych miesiącach. Jeśli planujesz przeniesienie swojego e-commerce (np. na PrestaShop, WooCommerce lub dedykowany system Laravel), zadbaj o przygotowanie mapy przekierowań 301 i środowisko testowe. Potrzebujesz pomocy z zaplanowaniem lub wykonaniem technicznej części migracji? Skontaktuj się ze mną – przeprowadziłem już dziesiątki takich operacji bez strat dla biznesu.",
     related: [
       "migracja-sklepu-bez-przestojow-jak-to-zrobic",
-      "prestashop-czy-woocommerce-co-wybrac-w-2026",
+      "prestashop-czy-woocommerce-co-wybrac",
       "ile-kosztuje-sklep-prestashop",
     ],
   },
   {
-    slug: "top-10-seo-trendow-2026",
-    image: "/images/blog/top-10-seo-trendow-2026.png",
+    slug: "top-10-seo-trendow",
+    image: "/images/blog/top-10-seo-trendow.png",
     tag: "SEO · Marketing",
     title: "TOP 10 trendów SEO w 2026 roku — co warto wdrożyć",
     description:
@@ -215,7 +215,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "SEO w 2026 roku to połączenie technicznej optymalizacji, jakości treści i koncentracji na użytkowniku. Najskuteczniejsza strategia to tworzenie wartościowych, trafnych treści, które odpowiadają na pytania użytkowników i zapewniają doskonałe doświadczenie. Pamiętaj — SEO to maraton, nie sprint. Analizuj wyniki, adaptuj się do zmian algorytmów i zawsze stawiaj na pierwszym miejscu interesy swojej grupy docelowej.",
     related: [
       "bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis",
-      "prestashop-czy-woocommerce-co-wybrac-w-2026",
+      "prestashop-czy-woocommerce-co-wybrac",
       "laravel-vs-wordpress-co-wybrac-dla-firmy",
     ],
   },
@@ -387,8 +387,8 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    slug: "prestashop-czy-woocommerce-co-wybrac-w-2026",
-    image: "/images/blog/prestashop-czy-woocommerce-co-wybrac-w-2026.png",
+    slug: "prestashop-czy-woocommerce-co-wybrac",
+    image: "/images/blog/prestashop-czy-woocommerce-co-wybrac.png",
     tag: "E-commerce",
     title: "PrestaShop czy WooCommerce — co wybrać w 2026?",
     description:
@@ -513,7 +513,7 @@ export const BLOG_POSTS: BlogPost[] = [
     conclusion:
       "Realny budżet na uczciwy sklep PrestaShop dla małej/średniej firmy to 8 000–18 000 zł plus 300–600 zł miesięcznie na utrzymanie. Jeżeli ktoś proponuje 3 000 zł za 'wszystko', najczęściej znaczy to gotowy szablon bez testów i z licencjami na cudze konto.",
     related: [
-      "prestashop-czy-woocommerce-co-wybrac-w-2026",
+      "prestashop-czy-woocommerce-co-wybrac",
       "migracja-sklepu-bez-przestojow-jak-to-zrobic",
       "bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis",
     ],
@@ -595,7 +595,7 @@ export const BLOG_POSTS: BlogPost[] = [
     conclusion:
       "Migracja sklepu bez utraty ruchu i klientów jest jak najbardziej możliwa — wymaga jednak planu, mapy 301 i pełnego testu przed przepięciem. Najwięcej tracą sklepy, które migrują 'na szybko' bez tych trzech elementów.",
     related: [
-      "prestashop-czy-woocommerce-co-wybrac-w-2026",
+      "prestashop-czy-woocommerce-co-wybrac",
       "bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis",
       "rest-api-co-to-jest-i-dlaczego-sklep-go-potrzebuje",
     ],
@@ -824,7 +824,7 @@ export const BLOG_POSTS: BlogPost[] = [
     conclusion:
       "REST API to dziś podstawa skalowalnego sklepu. Bez niego rośniesz do pewnego pułapu, potem dusisz się ręczną pracą. Inwestycja w dobrą integrację API zwraca się zwykle w 3–6 miesięcy — w oszczędności czasu pracowników.",
     related: [
-      "prestashop-czy-woocommerce-co-wybrac-w-2026",
+      "prestashop-czy-woocommerce-co-wybrac",
       "laravel-vs-wordpress-co-wybrac-dla-firmy",
       "crm-na-zamowienie-vs-gotowe-rozwiazanie",
     ],
