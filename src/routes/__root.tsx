@@ -11,26 +11,71 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteLayout } from "@/components/site/SiteLayout";
+import { SERVICES_DETAIL } from "@/lib/services-detail";
+
+const SERVICE_ICONS: Record<string, string> = {
+  "strony-internetowe": "🌐",
+  "sklepy-internetowe": "🛒",
+  "aplikacje-webowe": "⚙️",
+  "prestashop": "🏪",
+  "wordpress": "📝",
+  "api-integracje": "🔗",
+  "utrzymanie-serwisow": "🛡️",
+  "audyt-seo": "📈",
+};
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
+    <SiteLayout>
+      <div className="min-h-screen flex items-center justify-center pt-24 pb-16 px-6">
+        <div className="max-w-4xl mx-auto w-full text-center">
+          <div className="font-mono text-[14px] uppercase tracking-[0.25em] text-accent mb-6 animate-pulse">
+            Błąd 404
+          </div>
+          <h1 className="font-display text-7xl md:text-9xl font-extrabold tracking-tighter text-foreground mb-6 glow-accent">
+            404
+          </h1>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+            Ups! Zabłądziłeś w sieci
+          </h2>
+          <p className="text-lg text-foreground/60 max-w-2xl mx-auto mb-12">
+            Strona, której szukasz, nie istnieje, została przeniesiona lub adres URL jest błędny.
+          </p>
+
+          <div className="mb-16">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-accent-foreground font-bold hover:brightness-110 transition-all glow-accent"
+            >
+              Wróć na stronę główną
+            </Link>
+          </div>
+
+          <div className="text-left border-t border-hairline pt-12">
+            <h3 className="font-display text-2xl font-bold tracking-tight mb-8 text-center">
+              Może interesuje Cię jedna z moich usług?
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {SERVICES_DETAIL.map((s) => (
+                <Link
+                  key={s.slug}
+                  to="/uslugi/$slug"
+                  params={{ slug: s.slug }}
+                  className="group p-6 rounded-2xl border border-hairline bg-surface/30 hover:bg-surface hover:border-accent/40 transition-colors flex flex-col"
+                >
+                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform origin-left">
+                    {SERVICE_ICONS[s.slug] ?? "💡"}
+                  </div>
+                  <div className="font-bold mb-2 group-hover:text-accent transition-colors text-sm">{s.title}</div>
+                  <div className="text-xs text-foreground/50 line-clamp-2 mt-auto">{s.price}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </SiteLayout>
   );
 }
 
