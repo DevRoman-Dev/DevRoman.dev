@@ -93,7 +93,7 @@ export const BLOG_POSTS: BlogPost[] = [
     related: [
       "migracja-sklepu-bez-przestojow-jak-to-zrobic",
       "prestashop-czy-woocommerce-co-wybrac-w-2026",
-      "ile-kosztuje-sklep-prestashop-w-2026",
+      "ile-kosztuje-sklep-prestashop",
     ],
   },
   {
@@ -382,7 +382,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Zatrudnianie ukraińskich programistów to dla polskich firm racjonalna decyzja biznesowa: dobry stosunek jakości do ceny, ta sama strefa czasowa, możliwa komunikacja po polsku. Klucz to dobre wystartowanie projektu — umowa, zakres, repozytorium i regularna komunikacja.",
     related: [
       "laravel-vs-wordpress-co-wybrac-dla-firmy",
-      "ile-kosztuje-sklep-prestashop-w-2026",
+      "ile-kosztuje-sklep-prestashop",
       "crm-na-zamowienie-vs-gotowe-rozwiazanie",
     ],
   },
@@ -450,14 +450,14 @@ export const BLOG_POSTS: BlogPost[] = [
     conclusion:
       "Nie ma jednej dobrej odpowiedzi — wybór zależy od skali katalogu, planów contentowych i integracji. Najgorsze, co możesz zrobić, to wybrać platformę pod modę. Wybierz pod realny model biznesowy i plan na 2–3 lata do przodu.",
     related: [
-      "ile-kosztuje-sklep-prestashop-w-2026",
+      "ile-kosztuje-sklep-prestashop",
       "migracja-sklepu-bez-przestojow-jak-to-zrobic",
       "rest-api-co-to-jest-i-dlaczego-sklep-go-potrzebuje",
     ],
   },
   {
-    slug: "ile-kosztuje-sklep-prestashop-w-2026",
-    image: "/images/blog/ile-kosztuje-sklep-prestashop-w-2026.png",
+    slug: "ile-kosztuje-sklep-prestashop",
+    image: "/images/blog/ile-kosztuje-sklep-prestashop.png",
     tag: "E-commerce · Ceny",
     title: "Ile kosztuje sklep PrestaShop w 2026?",
     description:
@@ -683,7 +683,7 @@ export const BLOG_POSTS: BlogPost[] = [
     conclusion:
       "Bezpieczeństwo to proces, nie projekt. Wdrożenie tych 10 punktów zajmuje wieczór i blokuje 90% typowych ataków. Dla sklepów i stron z danymi klientów dodatkowo zalecam audyt raz na 6 miesięcy.",
     related: [
-      "ile-kosztuje-sklep-prestashop-w-2026",
+      "ile-kosztuje-sklep-prestashop",
       "migracja-sklepu-bez-przestojow-jak-to-zrobic",
       "laravel-vs-wordpress-co-wybrac-dla-firmy",
     ],

@@ -7,7 +7,7 @@
   "redirects": [
     { "source": "/blog/ukrainski-developer.html", "destination": "/blog/dlaczego-polskie-firmy-zatrudniaja-ukrainskich-programistow", "permanent": true },
     { "source": "/blog/prestashop-vs-woocommerce.html", "destination": "/blog/prestashop-czy-woocommerce-co-wybrac-w-2026", "permanent": true },
-    { "source": "/blog/ile-kosztuje-prestashop.html", "destination": "/blog/ile-kosztuje-sklep-prestashop-w-2026", "permanent": true },
+    { "source": "/blog/ile-kosztuje-prestashop.html", "destination": "/blog/ile-kosztuje-sklep-prestashop", "permanent": true },
     { "source": "/blog/migracja-sklepu.html", "destination": "/blog/migracja-sklepu-bez-przestojow-jak-to-zrobic", "permanent": true },
     { "source": "/blog/bezpieczenstwo-wordpress.html", "destination": "/blog/bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis", "permanent": true },
     { "source": "/blog/laravel-vs-wordpress.html", "destination": "/blog/laravel-vs-wordpress-co-wybrac-dla-firmy", "permanent": true },
