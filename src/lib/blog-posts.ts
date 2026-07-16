@@ -22,6 +22,139 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "prestashop-blad-500-jak-naprawic",
+    image: "/images/blog/prestashop-blad-500-jak-naprawic.png",
+    tag: "PrestaShop · Poradnik",
+    title: "Błąd 500 w PrestaShop (Internal Server Error) – co to jest i jak go szybko naprawić?",
+    description:
+      "Twój sklep PrestaShop nie działa i wyświetla biały ekran lub błąd 500? Dowiedz się jak włączyć tryb debugowania (debug mode), znaleźć przyczynę awarii i uratować sprzedaż.",
+    date: "17 lip 2026",
+    datePublished: "2026-07-17",
+    read: "6 min",
+    keywords: [
+      "prestashop error 500",
+      "błąd 500 prestashop",
+      "internal server error prestashop",
+      "biały ekran prestashop",
+      "naprawa sklepu prestashop",
+      "pomoc prestashop"
+    ],
+    intro:
+      "Zobaczyłeś biały ekran i komunikat 'Błąd 500 (Internal Server Error)' na swoim sklepie PrestaShop? Spokojnie. To najczęstszy, ale zarazem najbardziej stresujący problem, z jakim spotykają się właściciele e-commerce. Oznacza on jedynie, że serwer napotkał nieoczekiwany błąd i nie może przetworzyć żądania. W tym artykule pokażę Ci krok po kroku, jak zdiagnozować przyczynę awarii i przywrócić sklep do działania. A jeśli licznik strat bije i potrzebujesz pomocy na wczoraj – skontaktuj się ze mną, naprawiam takie błędy ekspresowo.",
+    sections: [
+      {
+        h2: "Krok 1: Włącz tryb debugowania (Debug Mode)",
+        paragraphs: [
+          "Błąd 500 to tylko ogólny komunikat. Aby dowiedzieć się, co dokładnie się zepsuło, musisz zmusić PrestaShop do wyświetlenia szczegółów błędu (tzw. stack trace).",
+          "Zaloguj się na swój serwer FTP (np. przez FileZilla) i przejdź do folderu głównego sklepu. Znajdź plik `/config/defines.inc.php`. Otwórz go do edycji i znajdź linijkę:",
+          "`define('_PS_MODE_DEV_', false);`",
+          "Zmień słowo `false` na `true`, zapisz plik i wyślij z powrotem na serwer. Odśwież stronę sklepu. Zamiast białego ekranu zobaczysz teraz dokładny komunikat błędu (często na czerwonym tle), który wskaże uszkodzony plik, moduł lub problem z bazą danych."
+        ]
+      },
+      {
+        h2: "Najczęstsze przyczyny błędu 500",
+        paragraphs: [
+          "Z mojego doświadczenia wynika, że w 90% przypadków za awarię odpowiada jeden z poniższych czynników:"
+        ],
+        list: [
+          "Konflikt po aktualizacji modułu. Wystarczy, że deweloper wtyczki popełnił literówkę w kodzie PHP, a cały sklep 'kładzie się' z błędem 500.",
+          "Zła wersja PHP na serwerze. PrestaShop 1.7 i 8.x wymagają konkretnych wersji PHP (np. 7.4 lub 8.1). Zmiana wersji PHP w panelu hostingu potrafi często uratować sytuację.",
+          "Wyczerpanie limitów serwera. Twój hosting może zabijać procesy, którym brakuje pamięci (memory_limit) lub czasu na wykonanie (max_execution_time).",
+          "Błędny plik .htaccess. Przypadkowe spacje lub błędne reguły w tym pliku od razu skutkują błędem serwera."
+        ]
+      },
+      {
+        h2: "Jak samodzielnie usunąć awarię?",
+        paragraphs: [
+          "Jeśli debug mode wskazał, że problemem jest konkretny moduł (nazwę modułu znajdziesz na samej górze komunikatu błędu, np. `modules/ps_emailalerts/ps_emailalerts.php`), wystarczy zalogować się na FTP i zmienić nazwę folderu tego modułu na np. `ps_emailalerts_OLD`. PrestaShop przestanie go ładować, a sklep powinien natychmiast wrócić do życia.",
+          "Jeśli błąd dotyczy pamięci cache, przejdź przez FTP do folderu `/var/cache/` (w nowszych wersjach) i usuń foldery `prod` oraz `dev`. PrestaShop wygeneruje świeży cache przy najbliższym wejściu na stronę."
+        ]
+      },
+      {
+        h2: "Kiedy wezwać specjalistę?",
+        paragraphs: [
+          "Nie wszystkie błędy da się naprawić zmianą nazwy folderu. Jeśli błąd dotyczy bazy danych (np. uszkodzona tabela), nadpisanych plików jądra (Core) albo złośliwego oprogramowania (wirusa), nieumiejętne próby naprawy mogą doprowadzić do nieodwracalnej utraty danych o zamówieniach.",
+          "Gdy sklep generuje przychody, każda godzina przestoju to realne straty finansowe i wizerunkowe (klienci uciekają do konkurencji). Zamiast zgadywać na forach, warto powierzyć to zadanie doświadczonemu programiście."
+        ]
+      }
+    ],
+    conclusion:
+      "Błąd 500 to nie koniec świata, ale sygnał, że z infrastrukturą techniczną Twojego sklepu dzieje się coś złego. Pamiętaj, aby po znalezieniu przyczyny i naprawie sklepu wyłączyć tryb debugowania (zmienić `true` z powrotem na `false`), ponieważ pozostawienie go włączonego stwarza gigantyczne zagrożenie dla bezpieczeństwa sklepu. Twój PrestaShop leży, a Ty nie wiesz jak sobie z tym poradzić? Napisz do mnie – analizuję logi serwera i przywracam sklepy do pełnej sprawności, minimalizując czas przestoju.",
+    related: [
+      "jak-przyspieszyc-sklep-prestashop",
+      "ile-kosztuje-sklep-prestashop",
+      "migracja-sklepu-internetowego"
+    ]
+  },
+  {
+    slug: "jak-przyspieszyc-sklep-prestashop",
+    image: "/images/blog/jak-przyspieszyc-sklep-prestashop.png",
+    tag: "PrestaShop · Optymalizacja",
+    title: "Jak przyspieszyć wolny sklep PrestaShop? (Pagespeed i konwersja)",
+    description:
+      "Klienci uciekają z wolnego sklepu? Poznaj techniczne sposoby na optymalizację PrestaShop. Cache, obrazy, PHP i wskaźniki Core Web Vitals.",
+    date: "16 lip 2026",
+    datePublished: "2026-07-16",
+    read: "8 min",
+    keywords: [
+      "przyspieszenie prestashop",
+      "optymalizacja prestashop",
+      "wolny sklep prestashop",
+      "pagespeed prestashop",
+      "optymalizacja e-commerce",
+      "jak przyspieszyć sklep"
+    ],
+    intro:
+      "Szybkość strony to dzisiaj być albo nie być w e-commerce. Amazon wyliczył kiedyś, że każde dodatkowe 100 milisekund ładowania strony kosztuje ich 1% spadku sprzedaży. Jeśli Twój sklep PrestaShop ładuje się 4, 5, a nawet 10 sekund, tracisz tysiące złotych z powodu porzuconych koszyków. Co gorsza, Google oficjalnie traktuje wskaźniki Core Web Vitals jako czynnik rankingowy, więc wolny sklep po prostu znika z wyników wyszukiwania. Poniżej przedstawiam konkretne techniki, które wdrażam u moich klientów, by 'odmulić' PrestaShop.",
+    sections: [
+      {
+        h2: "Podstawa: Odpowiedni Hosting i Wersja PHP",
+        paragraphs: [
+          "Najlepsza optymalizacja kodu na nic się zda, jeśli sklep stoi na najtańszym hostingu współdzielonym za 50 zł rocznie, gdzie Twoja strona dusi się z setkami innych.",
+          "E-commerce wymaga mocy. Zalecam przejście na serwer VPS (np. Hetzner, DigitalOcean) lub wydajny hosting elastyczny (np. dhosting). Upewnij się również, że używasz najnowszej obsługiwanej wersji PHP. Przejście z PHP 7.3 na PHP 8.1 może dać potężny, natychmiastowy wzrost wydajności procesora."
+        ]
+      },
+      {
+        h2: "Konfiguracja wydajności (Performance) w panelu",
+        paragraphs: [
+          "W samym panelu administracyjnym PrestaShop (zakładka Zaawansowane -> Wydajność) kryje się kilka przełączników, które muszą być poprawnie ustawione na produkcji:"
+        ],
+        list: [
+          "Kompilacja szablonów (Smarty): Ustaw na 'Nigdy nie kompiluj ponownie plików szablonów, jeśli zostały zaktualizowane'.",
+          "Pamięć podręczna (Cache): Upewnij się, że jest włączona na 'TAK'.",
+          "CCC (Combine, Compress and Cache): Włącz wszystkie opcje (Smart cache dla CSS, JavaScript, optymalizacja Apache). Dzięki temu dziesiątki małych plików złączą się w jeden, znacząco zmniejszając liczbę zapytań HTTP do serwera."
+        ]
+      },
+      {
+        h2: "Moduły, które spowalniają sklep",
+        paragraphs: [
+          "Każdy zainstalowany moduł dokłada 'cegiełkę' do czasu ładowania strony. Moduły z zewnętrznymi skryptami (czaty na żywo, pop-upy z zapisem do newslettera, widżety społecznościowe) są wrogami PageSpeed. Szczególnie groźne są moduły śledzące, które pobierają gigabajty danych z zewnętrznych serwerów.",
+          "Zasada jest prosta: Wyłącz i odinstaluj wszystko, czego realnie nie używasz do sprzedaży. A skrypty niezbędne (np. Google Analytics czy Piksel Facebooka) dodawaj przez Google Tag Manager, wykorzystując opóźnione ładowanie (Lazy Loading)."
+        ]
+      },
+      {
+        h2: "Baza Danych – niewidzialne wąskie gardło",
+        paragraphs: [
+          "Po kilku latach działania bazy danych w PrestaShop 'puchną' od zbędnych danych. Setki tysięcy wpisów w tabelach takich jak `ps_connections`, `ps_guest`, czy starych, porzuconych koszyków (`ps_cart`) potrafią zablokować zapytania SQL.",
+          "Zaleca się regularne (ostrożne!) czyszczenie tych tabel z danych starszych niż np. rok. Do tego celu służą dedykowane moduły optymalizacji bazy danych lub bezpośrednie kwerendy czyszczące uruchamiane przez phpMyAdmin (pamiętaj o kopii zapasowej!)."
+        ]
+      },
+      {
+        h2: "Obrazy w formacie WebP",
+        paragraphs: [
+          "Zdjęcia produktów to zazwyczaj najcięższe elementy strony. Zamiast serwować ciężkie JPG, zaimplementuj obsługę formatu WebP. Formaty nowej generacji są nawet do 60% lżejsze bez utraty jakości. Warto też stosować Lazy Loading, aby obrazy ładowały się dopiero w momencie, gdy użytkownik przewinie do nich ekran."
+        ]
+      }
+    ],
+    conclusion:
+      "Wdrożenie powyższych kroków to absolutne minimum, jeśli zależy Ci na profesjonalnej sprzedaży. Dla bardzo dużych sklepów wdraża się jeszcze zaawansowane systemy cacheowania jak Redis czy Memcached oraz silniki wyszukiwania typu Elasticsearch. Jeśli zależy Ci na tym, aby Twój e-commerce szybował w wynikach PageSpeed Insights i nie tracił klientów przez długie ładowanie – chętnie przeprowadzę pełny audyt wydajnościowy Twojego sklepu PrestaShop.",
+    related: [
+      "prestashop-blad-500-jak-naprawic",
+      "prestashop-czy-woocommerce-co-wybrac",
+      "ile-kosztuje-sklep-prestashop"
+    ]
+  },
+  {
     slug: "migracja-sklepu-internetowego",
     image: "/images/blog/migracja-sklepu-internetowego.png",
     tag: "E-commerce · SEO",
