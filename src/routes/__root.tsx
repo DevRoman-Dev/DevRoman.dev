@@ -146,7 +146,7 @@ const WEBSITE_JSONLD = {
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  head: ({ location }) => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -173,6 +173,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
       },
+      {
+        rel: "canonical",
+        href: `https://devroman.pl${location?.pathname && location.pathname !== "/" ? location.pathname : ""}`
+      }
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(ORGANIZATION_JSONLD) },

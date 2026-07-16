@@ -13,14 +13,17 @@ import { Route as UslugiRouteImport } from './routes/uslugi'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as OMnieRouteImport } from './routes/o-mnie'
+import { Route as MiastaRouteImport } from './routes/miasta'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as CennikRouteImport } from './routes/cennik'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as UslugiIndexRouteImport } from './routes/uslugi.index'
+import { Route as MiastaIndexRouteImport } from './routes/miasta.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as UslugiSlugRouteImport } from './routes/uslugi.$slug'
+import { Route as MiastaMiastoRouteImport } from './routes/miasta.$miasto'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const UslugiRoute = UslugiRouteImport.update({
@@ -41,6 +44,11 @@ const PortfolioRoute = PortfolioRouteImport.update({
 const OMnieRoute = OMnieRouteImport.update({
   id: '/o-mnie',
   path: '/o-mnie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MiastaRoute = MiastaRouteImport.update({
+  id: '/miasta',
+  path: '/miasta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KontaktRoute = KontaktRouteImport.update({
@@ -73,6 +81,11 @@ const UslugiIndexRoute = UslugiIndexRouteImport.update({
   path: '/',
   getParentRoute: () => UslugiRoute,
 } as any)
+const MiastaIndexRoute = MiastaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MiastaRoute,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -82,6 +95,11 @@ const UslugiSlugRoute = UslugiSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => UslugiRoute,
+} as any)
+const MiastaMiastoRoute = MiastaMiastoRouteImport.update({
+  id: '/$miasto',
+  path: '/$miasto',
+  getParentRoute: () => MiastaRoute,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
@@ -95,13 +113,16 @@ export interface FileRoutesByFullPath {
   '/cennik': typeof CennikRoute
   '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
+  '/miasta': typeof MiastaRouteWithChildren
   '/o-mnie': typeof OMnieRoute
   '/portfolio': typeof PortfolioRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uslugi': typeof UslugiRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
+  '/miasta/$miasto': typeof MiastaMiastoRoute
   '/uslugi/$slug': typeof UslugiSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/miasta/': typeof MiastaIndexRoute
   '/uslugi/': typeof UslugiIndexRoute
 }
 export interface FileRoutesByTo {
@@ -113,8 +134,10 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/miasta/$miasto': typeof MiastaMiastoRoute
   '/uslugi/$slug': typeof UslugiSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/miasta': typeof MiastaIndexRoute
   '/uslugi': typeof UslugiIndexRoute
 }
 export interface FileRoutesById {
@@ -124,13 +147,16 @@ export interface FileRoutesById {
   '/cennik': typeof CennikRoute
   '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
+  '/miasta': typeof MiastaRouteWithChildren
   '/o-mnie': typeof OMnieRoute
   '/portfolio': typeof PortfolioRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uslugi': typeof UslugiRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
+  '/miasta/$miasto': typeof MiastaMiastoRoute
   '/uslugi/$slug': typeof UslugiSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/miasta/': typeof MiastaIndexRoute
   '/uslugi/': typeof UslugiIndexRoute
 }
 export interface FileRouteTypes {
@@ -141,13 +167,16 @@ export interface FileRouteTypes {
     | '/cennik'
     | '/faq'
     | '/kontakt'
+    | '/miasta'
     | '/o-mnie'
     | '/portfolio'
     | '/sitemap.xml'
     | '/uslugi'
     | '/blog/$slug'
+    | '/miasta/$miasto'
     | '/uslugi/$slug'
     | '/blog/'
+    | '/miasta/'
     | '/uslugi/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -159,8 +188,10 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/sitemap.xml'
     | '/blog/$slug'
+    | '/miasta/$miasto'
     | '/uslugi/$slug'
     | '/blog'
+    | '/miasta'
     | '/uslugi'
   id:
     | '__root__'
@@ -169,13 +200,16 @@ export interface FileRouteTypes {
     | '/cennik'
     | '/faq'
     | '/kontakt'
+    | '/miasta'
     | '/o-mnie'
     | '/portfolio'
     | '/sitemap.xml'
     | '/uslugi'
     | '/blog/$slug'
+    | '/miasta/$miasto'
     | '/uslugi/$slug'
     | '/blog/'
+    | '/miasta/'
     | '/uslugi/'
   fileRoutesById: FileRoutesById
 }
@@ -185,6 +219,7 @@ export interface RootRouteChildren {
   CennikRoute: typeof CennikRoute
   FaqRoute: typeof FaqRoute
   KontaktRoute: typeof KontaktRoute
+  MiastaRoute: typeof MiastaRouteWithChildren
   OMnieRoute: typeof OMnieRoute
   PortfolioRoute: typeof PortfolioRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -219,6 +254,13 @@ declare module '@tanstack/react-router' {
       path: '/o-mnie'
       fullPath: '/o-mnie'
       preLoaderRoute: typeof OMnieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/miasta': {
+      id: '/miasta'
+      path: '/miasta'
+      fullPath: '/miasta'
+      preLoaderRoute: typeof MiastaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontakt': {
@@ -263,6 +305,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UslugiIndexRouteImport
       parentRoute: typeof UslugiRoute
     }
+    '/miasta/': {
+      id: '/miasta/'
+      path: '/'
+      fullPath: '/miasta/'
+      preLoaderRoute: typeof MiastaIndexRouteImport
+      parentRoute: typeof MiastaRoute
+    }
     '/blog/': {
       id: '/blog/'
       path: '/'
@@ -276,6 +325,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/uslugi/$slug'
       preLoaderRoute: typeof UslugiSlugRouteImport
       parentRoute: typeof UslugiRoute
+    }
+    '/miasta/$miasto': {
+      id: '/miasta/$miasto'
+      path: '/$miasto'
+      fullPath: '/miasta/$miasto'
+      preLoaderRoute: typeof MiastaMiastoRouteImport
+      parentRoute: typeof MiastaRoute
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -299,6 +355,19 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface MiastaRouteChildren {
+  MiastaMiastoRoute: typeof MiastaMiastoRoute
+  MiastaIndexRoute: typeof MiastaIndexRoute
+}
+
+const MiastaRouteChildren: MiastaRouteChildren = {
+  MiastaMiastoRoute: MiastaMiastoRoute,
+  MiastaIndexRoute: MiastaIndexRoute,
+}
+
+const MiastaRouteWithChildren =
+  MiastaRoute._addFileChildren(MiastaRouteChildren)
+
 interface UslugiRouteChildren {
   UslugiSlugRoute: typeof UslugiSlugRoute
   UslugiIndexRoute: typeof UslugiIndexRoute
@@ -318,6 +387,7 @@ const rootRouteChildren: RootRouteChildren = {
   CennikRoute: CennikRoute,
   FaqRoute: FaqRoute,
   KontaktRoute: KontaktRoute,
+  MiastaRoute: MiastaRouteWithChildren,
   OMnieRoute: OMnieRoute,
   PortfolioRoute: PortfolioRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
