@@ -29,6 +29,13 @@ export const Route = createFileRoute("/blog/$slug")({
         statusCode: 301,
       });
     }
+    if (params.slug === "rest-api-co-to-jest") {
+      throw redirect({
+        to: "/blog/$slug",
+        params: { slug: "rest-api-co-to-jest-i-dlaczego-sklep-go-potrzebuje" },
+        statusCode: 301,
+      });
+    }
 
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();

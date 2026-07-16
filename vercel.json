@@ -13,6 +13,7 @@
     { "source": "/blog/bezpieczenstwo-wordpress.html", "destination": "/blog/bezpieczenstwo-wordpress-10-rzeczy-ktore-zrobisz-dzis", "permanent": true },
     { "source": "/blog/laravel-vs-wordpress.html", "destination": "/blog/laravel-vs-wordpress-co-wybrac-dla-firmy", "permanent": true },
     { "source": "/blog/rest-api.html", "destination": "/blog/rest-api-co-to-jest-i-dlaczego-sklep-go-potrzebuje", "permanent": true },
+    { "source": "/blog/rest-api-co-to-jest", "destination": "/blog/rest-api-co-to-jest-i-dlaczego-sklep-go-potrzebuje", "permanent": true },
     { "source": "/blog/crm-na-zamowienie.html", "destination": "/blog/crm-na-zamowienie-vs-gotowe-rozwiazanie", "permanent": true },
     { "source": "/blog/jak-wybrac-freelancera.html", "destination": "/blog/jak-wybrac-programiste-freelancera", "permanent": true },
     { "source": "/blog/seo-trendy-2025.html", "destination": "/blog/top-10-seo-trendow", "permanent": true }
