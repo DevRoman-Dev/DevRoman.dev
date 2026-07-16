@@ -234,7 +234,8 @@ function BlogPostPage() {
                         <img 
                           src={r.image}
                           onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${r.slug}/600/400`; }}
-                          alt={r.title}
+                          alt={`Powiązany artykuł: ${r.title}`}
+                          loading="lazy"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>

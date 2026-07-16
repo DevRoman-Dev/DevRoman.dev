@@ -101,7 +101,8 @@ export function BlogPreview({ searchQuery = "", showSearch = false }: { searchQu
                       <img 
                         src={featured.image || `https://picsum.photos/seed/${featured.slug}/800/600`}
                         onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${featured.slug}/800/600`; }}
-                        alt={featured.title}
+                        alt={`Artykuł: ${featured.title}`}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                       />
                     </div>
@@ -124,7 +125,8 @@ export function BlogPreview({ searchQuery = "", showSearch = false }: { searchQu
                         <img 
                           src={b.image}
                           onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${b.slug}/600/400`; }}
-                          alt={b.title}
+                          alt={`Artykuł: ${b.title}`}
+                          loading="lazy"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
