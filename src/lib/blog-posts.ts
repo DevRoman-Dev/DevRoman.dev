@@ -22,6 +22,81 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "migracja-sklepu-internetowego",
+    image: "/images/blog/migracja-sklepu-internetowego.png",
+    tag: "E-commerce · SEO",
+    title: "Migracja sklepu internetowego: Jak przenieść sklep bez utraty SEO?",
+    description:
+      "Kompleksowy poradnik: migracja sklepu internetowego krok po kroku. Jak zmienić platformę (PrestaShop, WooCommerce, Shopify), przenieść dane i zachować pozycje w Google.",
+    date: "16 lip 2026",
+    datePublished: "2026-07-16",
+    read: "9 min",
+    keywords: [
+      "migracja sklepu internetowego",
+      "przeniesienie sklepu internetowego",
+      "migracja PrestaShop na WooCommerce",
+      "zmiana platformy e-commerce",
+      "migracja SEO sklepu",
+    ],
+    intro:
+      "Decyzja o zmianie platformy e-commerce to jeden z najważniejszych momentów w życiu każdego sklepu. Niezależnie od tego, czy uciekasz z drogiego rozwiązania SaaS (np. Shoper, Shopify), czy Twój stary WooCommerce lub PrestaShop nie nadąża za rozwojem firmy – migracja sklepu internetowego to proces, który wymaga precyzyjnego planu. W tym artykule dowiesz się, jak przeprowadzić przenosiny bez utraty wypracowanych latami pozycji w Google (SEO) oraz jak przenieść bazę klientów i zamówień tak, by sprzedaż nie stanęła w miejscu.",
+    sections: [
+      {
+        h2: "Czym właściwie jest migracja sklepu internetowego?",
+        paragraphs: [
+          "Migracja sklepu internetowego to nic innego jak przeniesienie całego biznesu online z jednego oprogramowania (silnika) na inne, lub drastyczna zmiana infrastruktury serwerowej. Proces ten przypomina przeprowadzkę fizycznego sklepu do nowej galerii handlowej – musisz przenieść towar (produkty), poinformować starych klientów, gdzie Cię szukać (przekierowania SEO), oraz zadbać o to, by systemy kasowe i magazyn działały na nowym miejscu."
+        ]
+      },
+      {
+        h2: "Dlaczego firmy decydują się na zmianę platformy?",
+        paragraphs: [
+          "Z mojego doświadczenia we wdrażaniu i utrzymywaniu platform e-commerce, najczęstsze powody migracji to:"
+        ],
+        list: [
+          "Ograniczenia technologiczne starej platformy (brak możliwości dedykowanych integracji z ERP czy nowym kurierem).",
+          "Zbyt wysokie koszty abonamentów (SaaS) przy dużej liczbie transakcji.",
+          "Problemy z wydajnością – wolne ładowanie strony zabija konwersję i SEO.",
+          "Przestarzały design, którego nie da się łatwo zaktualizować bez przepisywania całego kodu na nowo."
+        ]
+      },
+      {
+        h2: "Klucz do sukcesu: Migracja SEO (Przekierowania 301)",
+        paragraphs: [
+          "Największym błędem podczas migracji sklepu internetowego jest zapomnienie o zachowaniu struktury linków. Google indeksowało Twoje strony produktowe przez lata. Jeśli po przenosinach klient wejdzie ze starych linków w Google i zobaczy 'Błąd 404 - Strony nie znaleziono', Google szybko zrzuci Cię w rankingach.",
+          "Rozwiązaniem jest Mapa Przekierowań (Redirect Map). Każdy stary URL (kategoria, produkt, wpis na blogu) musi zostać przekierowany kodem 301 (Permanent Redirect) na swój nowy, dokładny odpowiednik. Dzięki temu zarówno klienci, jak i algorytmy wyszukiwarki płynnie trafią na nowy adres, a 'moc SEO' zostanie przekazana w 95-99% na nowy sklep."
+        ]
+      },
+      {
+        h2: "Co musisz przenieść? (Checklista danych)",
+        paragraphs: [
+          "Migracja danych to nie tylko import pliku CSV. Pełna przeprowadzka obejmuje przeniesienie:"
+        ],
+        list: [
+          "Katalogu produktów: Nazwy, opisy, warianty (np. rozmiar, kolor), atrybuty, ceny netto/brutto, stany magazynowe.",
+          "Kategorii: Całe drzewo kategorii oraz przypisanie do nich produktów.",
+          "Zdjęć: Miniaturki oraz galerie produktowe w najwyższej jakości.",
+          "Bazy klientów: Adresy e-mail, dane do wysyłki, numery NIP dla B2B (często migruje się też zaszyfrowane hasła, aby klienci nie musieli ich resetować!).",
+          "Historii zamówień: Statusy, opłacone kwoty, powiązane faktury.",
+          "Treści statycznych: Regulaminy, blog, polityka prywatności, FAQ."
+        ]
+      },
+      {
+        h2: "Harmonogram i wykonanie (Zero-Downtime)",
+        paragraphs: [
+          "Profesjonalna migracja sklepu internetowego musi przebiegać tak, aby klienci w ogóle nie odczuli przerwy w dostępie do sklepu. Jak to robię w praktyce?",
+          "Najpierw tworzone jest zamknięte środowisko testowe. Tam importujemy wszystkie dane i konfigurujemy nowy design oraz integracje. Sklep jest intensywnie testowany. Dopiero gdy wszystko działa perfekcyjnie, planujemy tzw. 'okno wdrożeniowe' – najczęściej w nocy lub w weekend. Wtedy zatrzymujemy stary sklep, robimy ostateczny eksport różnicowy (delta import – czyli pobieramy tylko te zamówienia, które wpadły w ciągu ostatnich kilku dni testów), i przepinamy domenę na nowy serwer. Przestój wynosi zwykle zaledwie kilkanaście minut."
+        ]
+      }
+    ],
+    conclusion:
+      "Skuteczna migracja sklepu internetowego to skomplikowany proces, wymagający wiedzy programistycznej, świadomości SEO i starannego planowania. Pamiętaj: tania migracja, wykonana bez dbałości o pozycje w Google i integralność danych, może kosztować Cię spadek sprzedaży o 50% w pierwszych miesiącach. Jeśli planujesz przeniesienie swojego e-commerce (np. na PrestaShop, WooCommerce lub dedykowany system Laravel), zadbaj o przygotowanie mapy przekierowań 301 i środowisko testowe. Potrzebujesz pomocy z zaplanowaniem lub wykonaniem technicznej części migracji? Skontaktuj się ze mną – przeprowadziłem już dziesiątki takich operacji bez strat dla biznesu.",
+    related: [
+      "migracja-sklepu-bez-przestojow-jak-to-zrobic",
+      "prestashop-czy-woocommerce-co-wybrac-w-2026",
+      "ile-kosztuje-sklep-prestashop-w-2026",
+    ],
+  },
+  {
     slug: "top-10-seo-trendow-2026",
     image: "/images/blog/top-10-seo-trendow-2026.png",
     tag: "SEO · Marketing",
