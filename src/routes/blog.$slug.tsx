@@ -36,6 +36,13 @@ export const Route = createFileRoute("/blog/$slug")({
         statusCode: 301,
       });
     }
+    if (params.slug === "crm-na-zamowienie-vs-gotowy") {
+      throw redirect({
+        to: "/blog/$slug",
+        params: { slug: "crm-na-zamowienie-vs-gotowe-rozwiazanie" },
+        statusCode: 301,
+      });
+    }
 
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
