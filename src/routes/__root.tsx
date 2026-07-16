@@ -210,6 +210,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       }
     ],
     scripts: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-DV4B9RX67D",
+        async: true,
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DV4B9RX67D');
+        `,
+      },
       { type: "application/ld+json", children: JSON.stringify(ORGANIZATION_JSONLD) },
       { type: "application/ld+json", children: JSON.stringify(WEBSITE_JSONLD) },
       { type: "application/ld+json", children: JSON.stringify(PROFESSIONAL_SERVICE_JSONLD) },
