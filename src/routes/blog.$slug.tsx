@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Contact } from "@/components/sections/Contact";
 import { getPostBySlug, BLOG_POSTS } from "@/lib/blog-posts";
@@ -7,6 +7,29 @@ const BASE = "https://devroman.pl";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
+    // 301 Redirects dla starych adresów URL
+    if (params.slug === "prestashop-vs-woocommerce") {
+      throw redirect({
+        to: "/blog/$slug",
+        params: { slug: "prestashop-czy-woocommerce-co-wybrac" },
+        statusCode: 301,
+      });
+    }
+    if (params.slug === "top-10-seo-trendow-2026") {
+      throw redirect({
+        to: "/blog/$slug",
+        params: { slug: "top-10-seo-trendow" },
+        statusCode: 301,
+      });
+    }
+    if (params.slug === "ile-kosztuje-sklep-prestashop-w-2026") {
+      throw redirect({
+        to: "/blog/$slug",
+        params: { slug: "ile-kosztuje-sklep-prestashop" },
+        statusCode: 301,
+      });
+    }
+
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
     return { post };
