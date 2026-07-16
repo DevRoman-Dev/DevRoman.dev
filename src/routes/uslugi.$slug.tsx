@@ -72,20 +72,35 @@ export const Route = createFileRoute("/uslugi/$slug")({
   },
   notFoundComponent: () => (
     <SiteLayout>
-      <div className="pt-32 pb-24 px-6 max-w-3xl mx-auto text-center">
-        <SectionLabel>404</SectionLabel>
-        <h1 className="mt-4 font-display text-4xl md:text-6xl font-extrabold tracking-tight">
-          Nie znalazłem takiej usługi
-        </h1>
-        <p className="mt-6 text-foreground/60">
-          Sprawdź pełną listę usług i wybierz interesujący Cię obszar.
-        </p>
-        <Link
-          to="/uslugi"
-          className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-bold"
-        >
-          ← Wszystkie usługi
-        </Link>
+      <div className="min-h-[80vh] flex items-center justify-center pt-24 pb-16 px-6">
+        <div className="max-w-2xl mx-auto w-full text-center">
+          <div className="font-mono text-[13px] uppercase tracking-[0.25em] text-accent mb-6 animate-pulse">
+            Błąd 404
+          </div>
+          <h1 className="font-display text-7xl md:text-8xl font-extrabold tracking-tighter mb-6">
+            404
+          </h1>
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-6">
+            Nie znalazłem takiej usługi
+          </h2>
+          <p className="text-foreground/60 mb-10">
+            Sprawdź pełną listę usług i wybierz interesujący Cię obszar.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/uslugi"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-bold hover:brightness-110 transition-all"
+            >
+              ← Wszystkie usługi
+            </Link>
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-hairline hover:border-accent/40 transition-colors"
+            >
+              Strona główna
+            </Link>
+          </div>
+        </div>
       </div>
     </SiteLayout>
   ),
