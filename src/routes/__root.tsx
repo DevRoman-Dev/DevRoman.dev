@@ -16,13 +16,11 @@ import { SERVICES_DETAIL } from "@/lib/services-detail";
 
 const SERVICE_ICONS: Record<string, string> = {
   "strony-internetowe": "🌐",
-  "sklepy-internetowe": "🛒",
-  "aplikacje-webowe": "⚙️",
-  "prestashop": "🏪",
-  "wordpress": "📝",
-  "api-integracje": "🔗",
-  "utrzymanie-serwisow": "🛡️",
-  "audyt-seo": "📈",
+  "sklepy-prestashop-woocommerce": "🛒",
+  "aplikacje-laravel": "⚙️",
+  "utrzymanie-projektow": "🛡️",
+  "integracje-api": "🔗",
+  "wsparcie-konsultacje": "💬",
 };
 
 function NotFoundComponent() {
@@ -56,7 +54,7 @@ function NotFoundComponent() {
             <h3 className="font-display text-2xl font-bold tracking-tight mb-8 text-center">
               Może interesuje Cię jedna z moich usług?
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
               {SERVICES_DETAIL.map((s) => (
                 <Link
                   key={s.slug}
