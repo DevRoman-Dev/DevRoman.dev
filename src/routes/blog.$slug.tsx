@@ -8,7 +8,10 @@ const BASE = "https://devroman.pl";
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     // 301 Redirects dla starych adresów URL
-    if (params.slug === "prestashop-vs-woocommerce") {
+    if (
+      params.slug === "prestashop-vs-woocommerce" ||
+      params.slug === "prestashop-czy-woocommerce-co-wybrac-w-2026"
+    ) {
       throw redirect({
         to: "/blog/$slug",
         params: { slug: "prestashop-czy-woocommerce-co-wybrac" },
