@@ -145,6 +145,35 @@ const WEBSITE_JSONLD = {
   },
 };
 
+const PROFESSIONAL_SERVICE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Roman Matviy — Full-stack Developer",
+  image: "https://devroman.pl/og-image.png",
+  description: "Tworzenie stron internetowych, sklepów PrestaShop, WooCommerce oraz dedykowanych aplikacji webowych Laravel. Usługi programistyczne B2B i B2C.",
+  url: "https://devroman.pl",
+  priceRange: "od 120 zł / h",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lwów",
+    addressCountry: "UA"
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "49.839683",
+    longitude: "24.029717"
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Polska"
+  },
+  sameAs: [
+    "https://t.me/RomanMatviy",
+    "https://linkedin.com/in/MatviyRoman",
+    "https://github.com/MatviyRoman",
+  ]
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: ({ location }) => ({
     meta: [
@@ -181,6 +210,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(ORGANIZATION_JSONLD) },
       { type: "application/ld+json", children: JSON.stringify(WEBSITE_JSONLD) },
+      { type: "application/ld+json", children: JSON.stringify(PROFESSIONAL_SERVICE_JSONLD) },
     ],
   }),
   shellComponent: RootShell,
